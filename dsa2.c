@@ -6,6 +6,7 @@
 #define MAX_FRIENDS 100
 #define MAX_INTERESTS 100
 
+// starting code from here.
 
 int hashFunction(struct HashMap *hashMap, const char *key)
 {
