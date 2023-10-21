@@ -30,3 +30,19 @@ void recommendFriends(struct User *user, struct SocialNetwork *social_network)
         }
     }
 }
+
+void resetPassword(struct HashMap* hashMap, const char* key, const char* newPassword) {
+    int index = hashFunction(hashMap,key);
+
+    struct HashMapNode* currentNode = hashMap->table[index];
+    while (currentNode != NULL) {
+        if (strcmp(currentNode->username, key) == 0) {
+            strcpy(currentNode->password, newPassword);
+            printf("Password reset successful.\n");
+            return;
+        }
+        currentNode = currentNode->next;
+    }
+
+    printf("Key not found in the hash map.\n");
+}

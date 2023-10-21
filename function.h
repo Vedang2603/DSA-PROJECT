@@ -70,3 +70,4 @@ struct HashMap *createHashMap(int capacity)
 }
 
 void recommendFriends(struct User *user, struct SocialNetwork *social_network);
+void resetPassword(struct HashMap* hashMap, const char* key, const char* newPassword);

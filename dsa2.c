@@ -627,7 +627,8 @@ int main()
             printf("6. Add interest\n");
             printf("7. Show Interests\n");
             printf("8. Recommended friends\n");
-            printf("9. Logout\n");
+            printf("9. Reset Password\n");
+            printf("10. Logout\n");
 
             printf("Enter your choice: ");
             scanf("%d", &ch);
@@ -776,8 +777,17 @@ int main()
             }
             
             case 9:
+            {
+                char newPassword[20];
+                printf("Enter new password");
+                scanf("%s",newPassword);
+                resetPassword(map,currentUser->username,newPassword);
+                break;
+            }
+            case 10:
                 logout(&currentUser);
                 break;
+
             default:
                 printf("Invalid choice. Please try again.\n");
             }
