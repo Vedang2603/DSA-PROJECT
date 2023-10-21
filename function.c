@@ -46,3 +46,27 @@ void resetPassword(struct HashMap* hashMap, const char* key, const char* newPass
 
     printf("Key not found in the hash map.\n");
 }
+
+
+void displayGraph(struct SocialNetwork *network)
+{
+    for (int i = 0; i < network->num_users; i++)
+    {
+        printf("Username for node %d: %s\n", i, network->users_list[i]->username);
+        printf("Number of Posts for node %d: %d\n", i, num_post(network->users_list[i]->posts_list));
+
+        printf("\nFriends: ");
+        for (int j = 0; j < network->users_list[i]->num_friends; j++)
+        {
+            printf("%s ", network->users_list[i]->friends_list[j]->username);
+        }
+
+        printf("\nInterests: ");
+        for (int j = 0; j < network->users_list[i]->num_interests; j++)
+        {
+            printf("%s ", network->users_list[i]->interests[j]);
+        }
+
+        printf("\n\n");
+    }
+}

@@ -546,7 +546,8 @@ int main()
         printf("\n----- HOME MENU -----\n");
         printf("1. Register\n");
         printf("2. Login\n");
-        printf("3. Exit\n");
+        printf("3. Show social_network\n");
+        printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -610,8 +611,15 @@ int main()
         }
         
         case 3:
+            printf("Showing social_network.\n");
+            displayGraph(network);
+            break;
+
+        case 4:
             printf("Exiting the program.\n");
             exit(0);
+
+
         default:
             printf("Invalid choice. Please try again.\n");
         }
